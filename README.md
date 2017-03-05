@@ -4,7 +4,7 @@
 		| |___\__ \  __/ (_| |  _ <| |_ / ___ \ (__| |_| |
 		|_____|___/_|   \__,_|_| \_\\__/_/   \_\___|\___/
 
-## Integrantes*
+## Integrantes
 - Jenifer Martínez
 - Omar Santiago
 - Diana Montes
