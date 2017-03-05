@@ -221,8 +221,8 @@ def Attack(auth, protocolo, url, port,dicP, dicU):
         if passAttack(user,auth, protocolo, url, port,dicP) :
             return
             
-Attack(1,False,"http://localhost/tienda/",80,"phpbb.txt.min","uhpbb.txt.min")            
-Attack(2,False,"http://localhost/perl/",80,"phpbb.txt.min","uhpbb.txt.min")            
+#Attack(1,False,"http://localhost/tienda/",80,"phpbb.txt.min","uhpbb.txt.min")            
+#Attack(2,False,"http://127.0.0.1/perl/",80,"phpbb.txt.min","uhpbb.txt.min")            
     
 #print authDigest("http://localhost/perl/",80,"admin","admin",False)
 

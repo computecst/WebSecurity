@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import httplib, urllib
 from HTMLParser import HTMLParser
+from urlparse import urlparse
 
 class MyHTMLParser(HTMLParser):
 
@@ -40,7 +41,8 @@ class Analyze():
 
 	# constructor
 	def __init__(self, p_site, p_port, p_path_file):
-		self.site = p_site;
+                url = urlparse(p_site)
+		self.site = url.netloc;
 		self.port = p_port
 		self.path_file = p_path_file
 
