@@ -285,6 +285,9 @@ enigma
 eclipse
 dallas
 casper
+hola123,
+hola123.,
+.hola123,
 bullshit
 asdfg
 555555

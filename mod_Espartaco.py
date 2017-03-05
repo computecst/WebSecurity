@@ -43,12 +43,6 @@ class Analyze():
 		self.site = p_site;
 		self.port = p_port
 		self.path_file = p_path_file
-		print """		 _____     ____       ____  _      _         ___  
-		| ____|___|  _ \ __ _|  _ \| |_   / \   ___ / _ \ 
-		|  _| / __| |_) / _` | |_) | __| / _ \ / __| | | |
-		| |___\__ \  __/ (_| |  _ <| |_ / ___ \ (__| |_| |
-		|_____|___/_|   \__,_|_| \_\\__/_/   \_\___|\___/
-		""";
 
 	def connection(self):
 		self.headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
